@@ -1,0 +1,27 @@
+{
+  "name": "webpack-multipage-boilerplate",
+  "version": "0.0.0",
+  "description": "Screwin around..",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabor Zsoter <helo@zsitro.com> (zsitro)",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "webpack": "~1.4.9",
+    "gulp": "~3.8.8",
+    "gulp-prettify": "~0.3.0",
+    "gulp-jade": "~0.8.0",
+    "gulp-autoprefixer": "~1.0.1",
+    "gulp-webserver": "~0.8.3",
+    "event-stream": "~3.1.7",
+    "gulp-ruby-sass": "~0.7.1",
+    "gulp-webpack": "~0.4.1",
+    "coffee-script": "~1.8.0",
+    "coffee-loader": "~0.7.2",
+    "imports-loader": "~0.6.3",
+    "generator-dp": "0.0.1",
+    "gulp-concat": "~2.4.1"
+  }
+}

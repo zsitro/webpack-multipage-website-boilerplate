@@ -1,0 +1,18 @@
+//- ------------------------------------------------
+//- FORCE CHROME FRAME - HTTP-EQUIV
+//- ------------------------------------------------
+mixin dp_vendor(_framework)
+	case _framework
+		when 'modernizr'
+			script(src='vendor/modernizr/modernizr.js')
+
+		when 'html5shiv'
+			script(src='js/vendor/html5shiv.js')
+
+		when 'bootstrap-css'
+			link(rel='stylesheet', href='vendor/bootstrap/dist/css/bootstrap.min.css')
+
+		when 'respond'
+			<!--[if lt IE 9]>
+			script(src='vendor/respond/respond.src.js')
+			<![endif]-->

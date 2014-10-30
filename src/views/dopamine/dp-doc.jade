@@ -1,0 +1,23 @@
+//- ------------------------------------------------
+//- Doctype & <html> markup generator
+//- TODO: make lang fully optional, don't force en-US
+//- ------------------------------------------------
+mixin dp_doc(_type, _lang)
+	-var _lang = _lang || "en-US"
+	-var _type = _type || "html5"
+
+	case _type
+		when 'html5'
+			doctype html
+			<html lang="#{_lang}">
+
+		when 'html5-modernizr-noie'
+			doctype html
+			<html lang="#{_lang}" class="no-js">
+
+		when 'html5-modernizr'
+			doctype html
+			<!--[if lt IE 7]><html lang="#{_lang}" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+			<!--[if (IE 7)&!(IEMobile)]><html lang="#{_lang}" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8"><![endif]-->
+			<!--[if (IE 8)&!(IEMobile)]><html lang="#{_lang}" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9" data-placeholder-focus="false"><![endif]-->
+			<!--[if gt IE 8]><!--> <html lang="#{_lang}" prefix="og: http://ogp.me/ns#" class="no-js"><!--<![endif]-->

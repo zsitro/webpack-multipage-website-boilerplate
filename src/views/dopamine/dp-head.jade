@@ -1,0 +1,107 @@
+//- ------------------------------------------------
+//- Char encoding
+//- ------------------------------------------------
+mixin dp_head_meta_charset(_charset)
+	- _charset = _charset || 'utf-8'
+	meta(charset=_charset)
+
+
+//- ------------------------------------------------
+//- FORCE CHROME FRAME - HTTP-EQUIV
+//- ------------------------------------------------
+mixin dp_head_meta_chromeframe
+	meta(http-equiv='X-UA-Compatible',content='IE=edge')
+
+//- ------------------------------------------------
+//- Author - HUMANS.TXT
+//- ------------------------------------------------
+mixin dp_head_author
+	link(type='text/plain',rel='author',href='humans.txt')
+
+//- ------------------------------------------------
+//- META - Description
+//- ------------------------------------------------
+mixin dp_head_meta_description(_content)
+	meta(name='description',content=_content)
+
+//- ------------------------------------------------
+//- META - Keywords
+//- ------------------------------------------------
+mixin dp_head_meta_keywords(_csv)
+	meta(name='keywords',content=_csv)
+
+//- ------------------------------------------------
+//- <TITLE>
+//- ------------------------------------------------
+mixin dp_head_title(_page_title, _suffix)
+	title= _page_title + ' | ' + _suffix
+	//- TODO: examine suffix
+
+//- ------------------------------------------------
+//- VIEWPORTS - Flexible, most common
+//- ------------------------------------------------
+mixin dp_head_meta_viewport()
+	//- Most flexible, common choice
+	meta(name='viewport',content='width=device-width, initial-scale=1.0')
+
+	//- Force scale 1, non-resizable
+	//- meta(name='viewport',content='initial-scale=1, maximum-scale=1, user-scalable=no')
+
+	//- Fixed width, non-responsive themes
+	//- meta(name='viewport',content='width=1280')
+	//- meta(name='viewport',content='width=1024')
+	//- meta(name='viewport',content='width=720')
+	//- meta(name='viewport',content='width=480')
+
+
+//- ------------------------------------------------
+//- FAVICONS
+//-
+//- https://github.com/audreyr/favicon-cheat-sheet
+//-
+//- Currently supports:
+//- 	- regular ICO (suggested size 16x16)
+//- 	- apple-touch-icon-precomposed (optional: size 120x120)
+//-		- Metro app icon
+//-
+//- Examples
+//- 	+favicon('ico','images/favicons/favicon.ico')
+//- 	+favicon('apple-touch-icon-precomposed','images/favicons/apple-touch-icon.png')
+//- 	+favicon('apple-touch-icon-precomposed','images/favicons/apple-touch-icon-152.png', '152x152')
+//-		+favicon('ms-application','images/favicons/apple-touch-icon.png', '#FFFFFF')
+//-
+//- TODO:
+//-
+//- 	<!-- For third-generation iPad with high-resolution Retina display: -->
+//- 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+//-
+//- 	<!-- For iPhone with high-resolution Retina display: -->
+//-
+//- 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+//-
+//- 	<!-- For first- and second-generation iPad: -->
+//-
+//- 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+//-
+//- 	<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+//-
+//- 	<link rel="apple-touch-icon-precomposed" href="apple-touch- icon-precomposed.png">
+
+//- ------------------------------------------------
+
+mixin dp_head_favicon(_type, _url, _opt1)
+	case _type
+		when 'ico'
+			link(rel='shortcut icon', href=_url, type='image/x-icon')
+
+		when 'apple-touch-icon-precomposed'
+			- if (_opt1){
+				link(rel='apple-touch-icon-precomposed', href=_url, sizes=_opt1)
+			- } else {
+				link(rel='apple-touch-icon-precomposed', href=_url)
+			- }
+
+		when 'ms-application'
+			meta(name='msapplication-TileColor',content=_opt1)
+			meta(name='msapplication-TileImage',content=_url)
+
