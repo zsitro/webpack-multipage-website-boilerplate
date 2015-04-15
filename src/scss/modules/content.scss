@@ -1,0 +1,91 @@
+// Generated on 2014-10-10 using generator-dp 0.0.1
+.content{
+	h1{}
+	h2{}
+	h3{}
+	h4{}
+	h5{}
+	img{
+		max-width: 100%;
+		margin-bottom: 1rem;
+	}
+
+	p{
+		@extend p;
+
+		a{
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+
+	hr{
+		// @extend .separator;
+	}
+
+	ul, ol{
+		@extend p;
+
+		// Indent for multiline lists
+		padding-left: 0.9rem;
+		margin-left: 2rem;
+		margin-right: 4rem;
+		margin-bottom: 1rem;
+
+		@media screen and (max-width: 767px){
+			padding-left: 0.5rem;
+			margin-left: 1rem;
+			margin-right: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		li{
+			list-style: none;
+			padding-bottom: .8rem;
+
+			&:before{
+				content: "•";
+				display: inline-block;
+				padding-right: .4rem;
+				font-size: 1.2em;
+				// Indent for multiline lists
+				margin-left: -0.8rem;
+			}
+
+			> ul{
+				padding-bottom: 0rem;
+				padding-left: 0rem;
+
+				> li{
+					padding-left: 1.1rem;
+
+					&:before{
+						content: "-";
+						display: inline-block;
+						padding-right: .3rem;
+					}
+				}
+			}
+		}
+	}
+	ol{
+		list-style-type: decimal;
+		> li{
+			list-style-type: decimal;
+			&:before{
+				display: none;
+			}
+		}
+	}
+	// Avoid duble margin
+	ol,ul{
+		> li{
+			> ul,
+			> ol{
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+

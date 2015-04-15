@@ -1,0 +1,30 @@
+// http://jsbin.com/dokolijole/2/edit?html,css,outpu
+.alignbox{
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+
+	&-item{
+		display: table-cell;
+		vertical-align: middle;
+		height: 100%;
+
+		&--top{
+			vertical-align: top;
+		}
+
+		&--middle{
+			vertical-align: middle;
+		}
+
+		&--bottom{
+			vertical-align: bottom;
+		}
+
+	}
+}
+.alignbox--autosize{
+	width: auto;
+}

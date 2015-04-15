@@ -1,9 +1,13 @@
 // var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 module.exports = {
-	entry: "./src/coffee/main.coffee",
+	// entry: "./src/coffee/main.coffee",
+	entry: {
+		common: "./src/coffee/main.coffee",
+		home: "./src/coffee/Pages/Home/Home.coffee"
+	},
 	output: {
 		path: "./dist/scripts",
-		filename: "application.js"
+		filename: "application.[name].js"
 	},
 	resolve: {
 		modulesDirectories: ['node_modules', 'bower_components', 'web_modules'],

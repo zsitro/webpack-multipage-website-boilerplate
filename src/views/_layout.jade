@@ -4,7 +4,6 @@ include dopamine/dp-doc
 include dopamine/dp-head
 include dopamine/dp-snippets-inline
 include dopamine/dp-vendor
-include partials/mixins
 
 //- LAYOUT
 +dp_doc('html5-modernizr', 'en-US')
@@ -14,7 +13,7 @@ head
 	+dp_head_title(dp.page.title, dp.project.name)
 	+dp_head_meta_description(dp.page.description)
 	+dp_head_meta_keywords(dp.page.keywords)
-	+dp_head_meta_viewport()
+	//- +dp_head_meta_viewport()
 
 	+dp_head_author()
 
@@ -23,40 +22,41 @@ head
 	+dp_head_favicon('apple-touch-icon-precomposed','images/favicons/favicon.png', '152x152')
 	+dp_head_favicon('ms-application','images/favicons/favicon.png', '#FFFFFF')
 
-
-
 	//- link(rel='stylesheet', href='public/css/bundle-libs.css')
 	link(rel='stylesheet', href='css/main.css')
 
 	//- +dp_vendor('modernizr')
 
-body(class=dp.page.class).theme-bg-content
+body(class=dp.page.class)
 
 	//- +dpsn_oldies()
 
 	// COMMON HEADER
-	header head
-
+	h1 Header yeey!
 	// END OF COMMON HEADER
 
 
 
 	// PAGE CONTENT
-	section#content
-		block content
+	block content
 	// END OF PAGE CONTENT
 
 
 
 	// COMMON FOOTER
-	footer.footer#footer
-		|footer
-	//- script(src='scripts/commons.chunk.js')
+	h1 Footer
+	ul
+		li
+			a(href="http://disneyland.com") External link test
+
+	script.
+		_App_ = {};
+		_App_.propFromServer = 'JOLO!';
 
 	script(src='scripts/vendor.js')
-	script(src='scripts/application.js')
+	script(src='scripts/application.common.js')
 
-//-block subpage_scripts
+	block subpage_scripts
 
 
 //- +dpsn_google_analytics('UA-XXXX-X')

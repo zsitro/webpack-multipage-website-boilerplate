@@ -1,0 +1,60 @@
+// Generated on 2014-12-02 using generator-dp 0.0.1
+.select{
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+
+	select{
+		font-size: 0.813rem;
+		font-weight: 400;
+		width: 100%;
+		border: 0;
+		background: none;
+		background: white\0 !important;
+		cursor: pointer;
+		padding: 0.525rem 1.825rem 0.625rem 0.625rem;
+
+		// All about hiding the arrow
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		text-indent: 0.01px;
+		text-overflow: '';
+
+		&::-ms-expand {
+			display: none;
+		}
+		&:focus{
+			outline: 0;
+		}
+	}
+	&--inline{
+		width: auto !important;
+	}
+}
+.select:before {
+	// content: '\25be';
+	content: '';
+	position: absolute;
+	pointer-events: none;
+	color: #82888a;
+	top: 14px;
+	padding-top: 0.7em;
+	line-height: 1;
+	right: 11px;
+	width: 13px;
+	height: 7px;
+	text-align: center;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAHCAQAAAB5eQ+RAAAAOElEQVQY02WNsQ0AMAjD/P9Bec8dQLSiygK2IMQYXImR8MsiZOSkN9xypnpwUQvxUYX7Yituo8gBKzxgTkt3YeoAAAAASUVORK5CYII=);
+	background-repeat: no-repeat;
+}
+
+.Safari .select{
+	select{
+		padding-top: .425rem;
+	}
+}
+.Mac.Firefox .select{
+	select{
+		padding-top: .5rem;
+	}
+}

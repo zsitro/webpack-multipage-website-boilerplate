@@ -9,10 +9,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Home | Meow!</title>
+		<title>Home | multipageBoilerplate</title>
 		<meta name="description" content="Dopamine is a lightweight Node app to ease sitebuilding with modular Jade templates and Stylus">
 		<meta name="keywords" content="dopamine,sitebuild,jade,stylus">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link type="text/plain" rel="author" href="humans.txt">
 		<link rel="shortcut icon" href="images/favicons/favicon.png" type="image/x-icon">
 		<link rel="apple-touch-icon-precomposed" href="images/favicons/favicon.png" sizes="152x152">
@@ -21,17 +20,29 @@
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 
-	<body class="l-home theme-bg-content">
+	<body class="l-index">
 		<!-- COMMON HEADER-->
-		<header>head</header>
+		<h1>Header yeey!</h1>
 		<!-- END OF COMMON HEADER-->
 
 		<!-- PAGE CONTENT-->
-		<section id="content">content jsdfas f</section>
+		<hr>
+		<h1>Content</h1>
+		<hr>
 		<!-- END OF PAGE CONTENT-->
 
 		<!-- COMMON FOOTER-->
-		<footer id="footer" class="footer">footer</footer>
+		<h1>Footer</h1>
+		<ul>
+			<li>
+				<a href="http://disneyland.com">External link test</a>
+			</li>
+		</ul>
+		<script>
+			_App_ = {};
+			_App_.propFromServer = 'JOLO!';
+		</script>
 		<script src="scripts/vendor.js"></script>
-		<script src="scripts/application.js"></script>
+		<script src="scripts/application.common.js"></script>
+		<script src="scripts/application.home.js"></script>
 	</body>

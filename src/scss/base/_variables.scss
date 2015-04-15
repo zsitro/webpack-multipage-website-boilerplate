@@ -1,0 +1,76 @@
+// FONT FACES & dimension
+// ---------------------------------------------- /
+$fontArial:		arial, Helvetica, sans-serif;
+$fontTimes:		'Times New Roman', serif;
+$fontDefault: 	$fontArial;
+$fontIcons: 	'fa';
+$fontSize:		16px;
+
+
+$fontSansLight: OpenSansLight, $fontArial;
+$fontSansRegular: OpenSansRegular, $fontArial;
+$fontSansSemibold: OpenSansSemibold, $fontArial;
+$fontSansBold: OpenSansBold, $fontArial;
+$fontSansItalic: OpenSansItalic, $fontArial;
+// $fontSansBoldItalic: $fontOpensansBoldItalic;
+
+$fontSerifRegular: $fontTimes;
+// ...
+
+// FONTS - ALIASES
+// ---------------------------------------------- /
+$fontContent: $fontDefault;
+$fontContentBold: $fontArial;
+$fontContentSemibold: $fontArial;
+$fontContentItalic: $fontArial;
+
+// COLOR NAMES
+// ---------------------------------------------- /
+$colorDark: #666;
+$colorLight: #aaa;
+$colorLighter: #ddd;
+$colorYellow: #cfb500;
+$colorRed: #db5757;
+$colorBlue: #0072bc;
+$colorGreen: #007233;
+
+// COLOR THEME
+// ---------------------------------------------- /
+$colorPrimary: $colorRed;
+$colorSecondary: $colorBlue;
+
+	// COLORS - ELEMENTS
+	// ---------------------------------------------- /
+	$colorDefault: $colorDark;
+	$colorLink: $colorRed;
+	$colorBorder: $colorRed;
+	$colorPlaceholder: $colorLighter;
+
+
+	// COLORS - MESSAGES
+	// ---------------------------------------------- /
+	$colorInfo: #0072BB;
+	$colorWarning: #EE6D29;
+	$colorWarningLight: #cfb500;
+	$colorError: #a00;
+	$colorSuccess: $colorGreen;
+
+// COLORS - SOCIAL & BRANDS
+// ---------------------------------------------- /
+$colorFacebook: #3b5998;
+$colorTwitter: #00acef;
+$colorGoogle: #db3f1c;
+$colorYotube: #cd201f;
+$colorPinterest: #c91618;
+$colorInstagram: #2a5b83;
+$colorLinkedin: #0076b2;
+
+// DIMENSIONS
+// ---------------------------------------------- /
+
+$siteWidth:	1170px;
+$inputHeight: 36px;
+
+// EASINGS
+// ---------------------------------------------- /
+$easingDefault: cubic-bezier(0.395, 0.425, 0.015, 1);

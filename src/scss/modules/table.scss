@@ -1,0 +1,33 @@
+// Generated on 2015-01-05 using generator-dp 0.0.1
+.table{
+	width: 100%;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+	small{
+		font-size: .8em;
+	}
+	td,	th{
+		border-bottom: 1px solid $colorLight;
+		padding: 1rem 1rem 1rem 0.5rem;
+		text-align: left;
+	}
+	th{
+		color: $colorPrimary;
+		font-weight: 700;
+		vertical-align: bottom;
+	}
+	tr{
+		&:hover td{
+			background: $colorLighter;
+			background: rgba($colorPrimary, .15);
+		}
+	}
+
+}
+.table--condensed{
+	font-size: .9rem;
+
+	td,	th{
+		padding: 0.5rem 0.5rem 0.5rem 0;
+	}
+}

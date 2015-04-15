@@ -1,0 +1,52 @@
+body{
+	color: red;
+}
+// !!!!Mixins
+@import "mixins/dopamine";
+
+// Base
+@import "base/reset";
+@import "base/variables";
+@import "layouts/layout-common";
+
+// Vendr libs
+@import "vendor/bootstrap";
+// @import "vendor/bootstrap-modal";
+// @import "vendor/bootstrap-collapse";
+// @import "vendor/bootstrap-dropdowns";
+// @import "vendor/bootstrap-tabs";
+// @import "vendor/imagelightbox";
+// @import "vendor/dropzone";
+// @import "vendor/datepicker";
+// @import "vendor/ui-autocomplete";
+// @import "vendor/jcrop";
+// @import "vendor/raty";
+
+// Animate.scss
+// @import "../../vendor/animate.css/animate.dupe.scss";
+
+@import "base/utils";
+@import "base/fonts";
+@import "base/icons";
+
+// Modules
+@import "modules/typo";
+@import "modules/header";
+@import "modules/footer";
+@import "modules/logo";
+@import "modules/content";
+@import "modules/alignbox";
+@import "modules/select";
+@import "modules/form-inputs";
+@import "modules/form-containers";
+@import "modules/form-toggles";
+@import "modules/nocontent";
+@import "modules/table";
+@import "modules/dopamine";
+// @import "modules/tooltip";
+//ModuleInsertReference
+
+// Pages
+// @import "layouts/layout-home";
+//LayoutInsertReference
+

@@ -1,0 +1,39 @@
+// Generated on 2014-12-09 using generator-dp 0.0.1
+
+input[type=text].form-control,
+input[type=email].form-control,
+input[type=password].form-control,
+// select.form-control,
+.select,
+textarea.form-control{
+	border-radius: 5px;
+	border-width: 1px;
+	border-color: $colorBorder;
+	border-style: solid;
+	background-color: white;
+	width: 100%;
+	font-family: $fontDefault;
+	font-size: 0.813rem;
+	font-weight: 400;
+	color: $colorLight;
+	height: $inputHeight;
+	padding: 10px 10px;
+	-webkit-appearance: none;
+	&:placeholder{
+		font-weight: 300;
+		color: $colorLighter;
+	}
+	&:hover,
+	&:focus{
+		border-color: $colorDark;
+		color: $colorDark;
+		outline: 0 !important;
+	}
+	&.form-control--100{
+		width: 100px;
+	}
+	&.has-icon{
+
+	}
+
+}

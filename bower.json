@@ -1,0 +1,20 @@
+{
+  "name": "multipageBoilerplate",
+  "version": "3.0.0",
+  "authors": [
+    "zsitro <helo@zsitro.com>"
+  ],
+  "license": "MIT",
+  "homepage": "zsitro.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "jquery.browser": "~0.0.7"
+  }
+}
