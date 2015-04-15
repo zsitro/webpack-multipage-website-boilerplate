@@ -21,7 +21,7 @@ gulp.task('jade', function() {
 				theme: {},
 				dp:{
 					page:{},
-					project: { name: "multipageBoilerplate"}
+					project: { name: "__multipageBoilerplate__"}
 				}
 			}
 		}))
