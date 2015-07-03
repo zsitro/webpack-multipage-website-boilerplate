@@ -76,8 +76,6 @@ gulp.task("vendor", function(callback) {
 		// './src/coffee/vendor/modernizr.custom.js', // prior to codrops-menu.js
 		// './bower_components/sly/dist/sly.min.js',
 		// './src/coffee/vendor/codrops-menu.js',
-		// './src/coffee/vendor/video.js',
-		// './src/coffee/vendor/bigvideo.js',
 
 		// Angular
 		// './bower_components/angular/angular.js',
