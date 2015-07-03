@@ -36,9 +36,9 @@ angular
 angular-route
 angular-sanitize
 sly
-raty
+raty // stars rating
 jquery.populate
-BigVideo.js
+vide //video backgrounds
 matchHeight
 angular-touch
 ```
