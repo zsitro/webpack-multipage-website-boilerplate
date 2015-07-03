@@ -72,6 +72,7 @@ gulp.task("vendor", function(callback) {
 		// './bower_components/jquery.inputmask/dist/inputmask/jquery.inputmask.js',
 		// './bower_components/jquery-throttle-debounce/jquery.ba-throttle-debounce.min.js',
 		// './bower_components/raty/lib/jquery.raty.js',
+		// './bower_components/vide/dist/jquery.vide.min.js',
 		// './src/coffee/vendor/modernizr.custom.js', // prior to codrops-menu.js
 		// './bower_components/sly/dist/sly.min.js',
 		// './src/coffee/vendor/codrops-menu.js',
