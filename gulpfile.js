@@ -8,6 +8,10 @@ var es = require('event-stream');
 var webpack = require('webpack');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var jpegoptim = require('imagemin-jpegoptim');
+var pngquant = require('imagemin-pngquant');
+var optipng = require('imagemin-optipng');
+var svgo = require('imagemin-svgo');
 var webpackConfig = require("./webpack.config.js");
 
 /**
@@ -162,12 +166,15 @@ gulp.task('webserver', function() {
 gulp.task('static', function () {
 	// Fonts
 		// .. just put at dist/fonts/
-	// Images
-		// .. Add image optimizer here
-	es.concat(
-		gulp.src('./src/images/**/*')
-			.pipe(gulp.dest('./dist/images'))
-	);
+});
+
+gulp.task('images', function () {
+	gulp.src('./src/images/**/*.{png,jpg,jpeg,gif}')
+		.pipe(pngquant({quality: '65-80', speed: 4})())
+		.pipe(optipng({optimizationLevel: 3})())
+		.pipe(jpegoptim({max: 70})())
+		.pipe(svgo()())
+		.pipe(gulp.dest('./dist/images'));
 });
 
 /**
@@ -178,7 +185,7 @@ gulp.task('watch', function() {
     gulp.watch('src/coffee/**/*.*', ['webpack']);
     gulp.watch('src/views/**/*.jade', ['jade']);
     gulp.watch('src/scss/**/*.scss', ['scss']);
-    gulp.watch('src/images/**/*.*', ['static']);
+    gulp.watch('src/images/**/*.*', ['images']);
 });
 
 gulp.task('default', ['jade', 'scss', 'webpack', 'watch', 'webserver']);
