@@ -13,6 +13,7 @@ var pngquant = require('imagemin-pngquant');
 var optipng = require('imagemin-optipng');
 var svgo = require('imagemin-svgo');
 var webpackConfig = require("./webpack.config.js");
+var clean = require('gulp-clean');
 
 /**
  * Jade
@@ -168,14 +169,23 @@ gulp.task('static', function () {
 		// .. just put at dist/fonts/
 });
 
-gulp.task('images', function () {
+/**
+ * Image optimization
+ */
+gulp.task('images-optimize', function () {
 	gulp.src('./src/images/**/*.{png,jpg,jpeg,gif}')
 		.pipe(pngquant({quality: '65-80', speed: 4})())
 		.pipe(optipng({optimizationLevel: 3})())
-		.pipe(jpegoptim({max: 70})())
+		.pipe(jpegoptim({max: 70, progressive: true})())
 		.pipe(svgo()())
 		.pipe(gulp.dest('./dist/images'));
 });
+gulp.task('images-clean', function () {
+    return gulp.src('./dist/images', {read: false})
+        .pipe(clean());
+});
+gulp.task('images', ['images-clean', 'images-optimize']);
+
 
 /**
  * Watch
