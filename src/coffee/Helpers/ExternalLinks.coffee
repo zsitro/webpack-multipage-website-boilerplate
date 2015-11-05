@@ -9,7 +9,7 @@ module.exports.attachListener = ->
 		"a[href^='http:']:not([href*='" + baseUrl + "']), "+
 		"a[href^='https:']:not([href*='" + baseUrl + "']), "+
 		"a[href$='.pdf']:not([href*='" + baseUrl + "']), "+
-		"a[href$='.pdf']"+
+		"a[href$='.pdf'], "+
 		"a.external",
 
 		->
