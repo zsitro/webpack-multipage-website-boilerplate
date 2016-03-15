@@ -15,7 +15,7 @@ var svgo = require('imagemin-svgo');
 var webpackConfig = require("./webpack.config.js");
 var clean = require('gulp-clean');
 
-/**
+/** ----------------------------------------------
  * Jade
  */
 gulp.task('jade', function() {
@@ -44,7 +44,7 @@ gulp.task('jade', function() {
 		.pipe(gulp.dest('./dist'));
 });
 
-/**
+/** ----------------------------------------------
  * Scss
  */
 gulp.task('scss', function() {
@@ -56,7 +56,7 @@ gulp.task('scss', function() {
         .pipe(gulp.dest('dist/css'));
 });
 
-/**
+/** ----------------------------------------------
  * Vendor bundle
  */
 gulp.task("vendor", function(callback) {
@@ -119,7 +119,7 @@ gulp.task("vendor", function(callback) {
 	.pipe(gulp.dest('./dist/scripts'));
 });
 
-/**
+/** ----------------------------------------------
  * Application Scripts
  */
 gulp.task("webpack", function(callback) {
@@ -148,7 +148,7 @@ gulp.task("webpack", function(callback) {
 	});
 });
 
-/**
+/** ----------------------------------------------
  * Serve and Livereload
  */
 gulp.task('webserver', function() {
@@ -161,7 +161,41 @@ gulp.task('webserver', function() {
 	}));
 });
 
-/**
+/** ----------------------------------------------
+ * SVG SPRITE
+ */
+var svgstore = require('gulp-svgstore');
+var svgmin = require('gulp-svgmin');
+var path = require('path');
+var cheerio = require('gulp-cheerio');
+
+gulp.task('svg', function () {
+    return gulp
+        .src('./src/svg/*.svg')
+        // .pipe(svgmin(function (file) {
+        //     var prefix = path.basename(file.relative, path.extname(file.relative));
+        //     return {
+        //         plugins: [{
+        //             cleanupIDs: {
+        //                 prefix: prefix + '-',
+        //                 minify: true
+        //             }
+        //         }]
+        //     }
+        // }))
+        .pipe(cheerio({
+            run: function ($) {
+                $('[fill]').removeAttr('fill');
+                $('[transform="scale(NaN)"]').removeAttr('transform');
+            },
+            parserOptions: { xmlMode: true }
+        }))
+        .pipe(svgstore())
+        .pipe(gulp.dest('./dist/svg'));
+});
+
+
+/** ----------------------------------------------
  * Copy static files
  */
 gulp.task('static', function () {
@@ -169,7 +203,7 @@ gulp.task('static', function () {
 		// .. just put at dist/fonts/
 });
 
-/**
+/** ----------------------------------------------
  * Image optimization
  */
 gulp.task('images-optimize', function () {
@@ -187,7 +221,7 @@ gulp.task('images-clean', function () {
 gulp.task('images', ['images-clean', 'images-optimize']);
 
 
-/**
+/** ----------------------------------------------
  * Watch
  */
 gulp.task('watch', function() {

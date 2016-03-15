@@ -18,16 +18,19 @@ An example how to organize assets and utilize webpack with modular code on a mul
 
 ##Bower bookmarks
 ```
+jquery
+jquery.validation // Form validation
+jquery-throttle-debounce // Debounce ajax calls
 bootstrap-js-components // Selectable js components from bootstrap
 imagelightbox // Image lightbox
-jquery
-ubilabs-geocomplete // For simple geocomplete applications
+vide //video backgrounds
+slick Image carousel, NO other carousels should be used on multi-person maintained projects
 dropzone // drag n drop, ajax file uploading
-jquery.validation // Form validation
+for toolitps -> http://kazzkiq.github.io/balloon.css/
+matchHeight // match containers' height
+
 jquery.inputmask // Avoid using such plugins especially on i18n sites
-jquery-throttle-debounce // Debounce ajax calls
 jquery.ui // Datepicker, slider
-jcrop // Picture cropper - see on Findafitness
 imagesloaded
 holderjs // Placeholder image generator, good for bigger projects
 underscore // js utilities
@@ -35,11 +38,9 @@ jquery.cookie // cookie handling
 angular
 angular-route
 angular-sanitize
-sly // Image carousel, NO other carousels should be used on multi-person maintained projects
+ubilabs-geocomplete // For simple geocomplete applications
 raty // stars rating
 jquery.populate // Refill forms from uri/json
-vide //video backgrounds
-matchHeight // match containers' height
 angular-touch
-for toolitps -> http://kazzkiq.github.io/balloon.css/
+jcrop // Picture cropper - see on Findafitness
 ```
