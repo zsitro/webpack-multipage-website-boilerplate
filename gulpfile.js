@@ -64,6 +64,7 @@ gulp.task("vendor", function(callback) {
 		'./bower_components/jquery/dist/jquery.js',
 		// './bower_components/underscore/underscore.js',
 		// './bower_components/jcrop/js/jquery.Jcrop.min.js',
+		// './bower_components/slick-carousel/slick/slick.min.js',
 		// './bower_components/jquery.cookie/jquery.cookie.js',
 		// './bower_components/dropzone/downloads/dropzone.js',
 		// './bower_components/imagelightbox/src/imagelightbox.js',
@@ -79,7 +80,6 @@ gulp.task("vendor", function(callback) {
 		// './bower_components/raty/lib/jquery.raty.js',
 		// './bower_components/vide/dist/jquery.vide.min.js',
 		// './src/coffee/vendor/modernizr.custom.js', // prior to codrops-menu.js
-		// './bower_components/sly/dist/sly.min.js',
 		// './src/coffee/vendor/codrops-menu.js',
 
 		// Angular
