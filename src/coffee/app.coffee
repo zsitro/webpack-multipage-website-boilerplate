@@ -3,7 +3,7 @@ class App
 	constructor : ->
 
 		@env = 'development'
-		@lang = 'en'
+		@lang = $('html').attr 'lang'
 		@version =
 			localStorage: .1
 	events :
