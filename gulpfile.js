@@ -73,7 +73,7 @@ gulp.task("vendor", function(callback) {
 		// './bower_components/matchHeight/jquery.matchHeight-min.js',
 		// './bower_components/ubilabs-geocomplete/jquery.geocomplete.js',
 		'./bower_components/jquery.browser/dist/jquery.browser.min.js',
-		// './bower_components/jquery.validation/dist/jquery.validate.min.js',
+		// './bower_components/jquery-validation/dist/jquery.validate.min.js',
 		// './bower_components/jquery.validation/dist/additional-methods.js',
 		// './bower_components/jquery.inputmask/dist/inputmask/jquery.inputmask.js',
 		// './bower_components/jquery-throttle-debounce/jquery.ba-throttle-debounce.min.js',
