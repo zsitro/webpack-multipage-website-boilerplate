@@ -44,6 +44,7 @@ class App
 		# require('./Components/Popovers.coffee').init()
 
 		if @utils.isPage 'contact'
-			require('./Pages/Contact/Contact.coffee').init()
+			return
+			# require('./Pages/Contact/Contact.coffee').init()
 
 module.exports = new App()

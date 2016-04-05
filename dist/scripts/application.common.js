@@ -70,17 +70,32 @@
 	App = (function() {
 	  function App() {
 	    this.env = 'development';
-	    this.lang = 'en';
+	    this.lang = $('html').attr('lang');
 	    this.version = {
 	      localStorage: .1
 	    };
 	  }
 
+	  App.prototype.events = {
+	    trigger: function(ev) {
+	      return $('body').trigger(ev);
+	    },
+	    on: function(ev, fn) {
+	      return $('body').on(ev, fn);
+	    }
+	  };
+
 	  App.prototype.bootstrap = function() {
 	    $.extend(this, arguments[0] || {});
 	    __webpack_require__(3);
-	    __webpack_require__(5).attachListener();
-	    return __webpack_require__(6).init().addClassesOn('html').attachTo(this);
+	    __webpack_require__(5).init().runOn('app.content.update.after');
+	    __webpack_require__(6).attachTo(this);
+	    __webpack_require__(7).attachListener();
+	    __webpack_require__(8).init();
+	    __webpack_require__(9).init().addClassesOn('html').attachTo(this);
+	    if (this.utils.isPage('contact')) {
+
+	    }
 	  };
 
 	  return App;
@@ -99,7 +114,7 @@
 
 /***/ },
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	module.exports = function() {};
 
@@ -112,22 +127,150 @@
 
 /***/ },
 /* 5 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
+
+	var BackgroundAttach;
+
+	BackgroundAttach = (function() {
+	  var instance;
+
+	  instance = null;
+
+	  function BackgroundAttach() {
+	    if (instance) {
+	      return instance;
+	    } else {
+	      instance = this;
+	    }
+	  }
+
+	  BackgroundAttach.prototype.run = function() {
+	    console.log('BackgroundAttach:run');
+	    $('[background], [icon-url]').each(function() {
+	      var url;
+	      url = $(this).attr('background') || $(this).attr('icon-url');
+	      if (!url || (url === 'background')) {
+	        url = $(this).find(' > img').first().attr('src');
+	        $(this).find('> img').first().remove();
+	      }
+	      return $(this).css('background-image', 'url(' + url + ')');
+	    });
+	    return this;
+	  };
+
+	  BackgroundAttach.prototype.attachListener = function() {
+	    $('body').on(arguments[0], this.init);
+	    return this;
+	  };
+
+	  BackgroundAttach.prototype.init = BackgroundAttach.prototype.run;
+
+	  BackgroundAttach.prototype.runOn = BackgroundAttach.prototype.attachListener;
+
+	  return BackgroundAttach;
+
+	})();
+
+	module.exports = new BackgroundAttach();
+
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	var Utils;
+
+	Utils = (function() {
+	  var instance;
+
+	  instance = null;
+
+	  function Utils() {
+	    if (instance) {
+	      return instance;
+	    } else {
+	      instance = this;
+	    }
+	  }
+
+	  Utils.prototype.isPage = function() {
+	    return $('body').hasClass('l-' + arguments[0]);
+	  };
+
+	  Utils.prototype.attachTo = function() {
+	    return arguments[0].utils = this;
+	  };
+
+	  Utils.prototype.scrollTo = function() {
+	    var callback, offset, target;
+	    target = $(arguments[0]);
+	    offset = arguments[1] || 0;
+	    callback = arguments[2] || function() {};
+	    if (target.length) {
+	      console.log('.animate line');
+	      return $('html,body').animate({
+	        scrollTop: target.offset().top + offset
+	      }, 600).promise().done(function() {
+	        return callback();
+	      });
+	    }
+	  };
+
+	  return Utils;
+
+	})();
+
+	module.exports = new Utils();
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
 
 	var baseUrl;
 
 	baseUrl = window.location.host;
 
 	module.exports.attachListener = function() {
-	  return $("body").on('click', "a[href^='http:']:not([href*='" + baseUrl + "']), " + "a[href^='https:']:not([href*='" + baseUrl + "']), " + "a[href$='.pdf']:not([href*='" + baseUrl + "']), " + "a[href$='.pdf']" + "a.external", function() {
+	  return $("body").on('click', "a[href^='http:']:not([href*='" + baseUrl + "']), " + "a[href^='https:']:not([href*='" + baseUrl + "']), " + "a[href$='.pdf']:not([href*='" + baseUrl + "']), " + "a[href$='.pdf'], " + "a.external", function() {
 	    return $(this).attr('target', '_blank');
 	  });
 	};
 
 
 /***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
+/* 8 */
+/***/ function(module, exports) {
+
+	module.exports.init = function() {
+	  return $(function() {
+	    return $('[svg-replace]').each(function() {
+	      var $img, imgClass, imgID, imgURL;
+	      $img = $(this);
+	      imgID = $img.attr('id');
+	      imgClass = $img.attr('class');
+	      imgURL = $img.attr('src');
+	      return $.get(imgURL, function(data) {
+	        var $svg;
+	        $svg = jQuery(data).find('svg');
+	        if (typeof imgID !== 'undefined') {
+	          $svg = $svg.attr('id', imgID);
+	        }
+	        if (typeof imgClass !== 'undefined') {
+	          $svg = $svg.attr('class', imgClass + ' replaced-svg');
+	        }
+	        $svg = $svg.removeAttr('xmlns:a');
+	        $img.replaceWith($svg);
+	        return App.events.trigger('svg:resize');
+	      }, 'xml');
+	    });
+	  });
+	};
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
 
 	var browserDetection;
 

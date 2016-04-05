@@ -2,6 +2,7 @@
   "name": "webpack-multipage-boilerplate",
   "version": "1.0.0",
   "description": "Screwin around..",
+  "repository": "https://github.com/zsitro/webpack-multipage-website-boilerplate",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,8 +10,19 @@
   "author": "Gabor Zsoter <helo@zsitro.com> (zsitro)",
   "license": "BSD-2-Clause",
   "dependencies": {
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.10.0",
+    "expose-loader": "^0.7.1",
+    "files-exist": "^1.0.1",
     "gulp": "^3.9.1",
-    "gulp-pug": "^1.0.0",
-    "pug": "^0.1.0"
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cheerio": "^0.6.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-prettify": "^0.4.0",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-svgstore": "^6.0.0",
+    "gulp-uglify": "^1.5.3",
+    "webpack-stream": "^3.1.0"
   }
 }
