@@ -19,6 +19,9 @@ browserDetection =
 			i++
 		return
 
+	isRetina: ->
+		return ((window.matchMedia && (window.matchMedia('only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx), only screen and (min-resolution: 75.6dpcm)').matches || window.matchMedia('only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)').matches)) || (window.devicePixelRatio && window.devicePixelRatio >= 2)) && /(iPad|iPhone|iPod)/g.test(navigator.userAgent)
+
 	searchVersion: (dataString) ->
 		index = dataString.indexOf(@versionSearchString)
 		if index == -1
@@ -108,6 +111,11 @@ browserDetection =
 			identity: 'iPhone-iPod'
 		}
 		{
+			string: navigator.userAgent
+			subString: 'iPad'
+			identity: 'iPhone-iPod'
+		}
+		{
 			string: navigator.platform
 			subString: 'Linux'
 			identity: 'Linux'
@@ -138,8 +146,17 @@ module.exports =
 			$target.removeClass 'Mozilla'
 			$target.addClass 'Explorer'
 
-		return @
+		if !!navigator.userAgent.match(/Trident.*rv[ :]*11\./)
+			$target.addClass 'ie-11'
+		if ( eval("/*@cc_on!@*/false") && document.documentMode is 10)
+			$target.addClass 'ie-10'
+		if /MSIE\s/.test(navigator.userAgent) && parseFloat(navigator.appVersion.split("MSIE")[1]) < 10
+			$target.addClass 'ie-9'
 
+		if browserDetection.isRetina()
+			$target.addClass 'Retina'
+
+		return @
 
 
 
