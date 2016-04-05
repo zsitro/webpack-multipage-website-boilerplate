@@ -1,13 +1,7 @@
 var gulp = require('gulp');
-// var webserver = require('gulp-webserver');
-// var es = require('event-stream');
 
-// var jpegoptim = require('imagemin-jpegoptim');
-// var pngquant = require('imagemin-pngquant');
-// var optipng = require('imagemin-optipng');
-// var svgo = require('imagemin-svgo');
 
-// var clean = require('gulp-clean');
+
 
 /** ----------------------------------------------
  * Jade
@@ -42,6 +36,9 @@ gulp.task('jade', function() {
 		.pipe(gulp.dest('./dist'));
 });
 
+
+
+
 /** ----------------------------------------------
  * Scss
  */
@@ -56,6 +53,9 @@ gulp.task('scss', function() {
         .pipe(autoprefixer('last 2 version', 'ie 10'))
         .pipe(gulp.dest('dist/css'));
 });
+
+
+
 
 /** ----------------------------------------------
  * Vendor bundle
@@ -123,6 +123,9 @@ gulp.task("vendor", function(callback) {
 	.pipe(gulp.dest('./dist/scripts'));
 });
 
+
+
+
 /** ----------------------------------------------
  * Application Scripts
  */
@@ -155,10 +158,15 @@ gulp.task("webpack", function(callback) {
 	});
 });
 
-// /** ----------------------------------------------
-//  * Serve and Livereload
-//  */
-// gulp.task('webserver', function() {
+
+
+
+/** ----------------------------------------------
+ * Serve and Livereload
+ */
+// var webserver = require('gulp-webserver');
+
+gulp.task('webserver', function() {
 // 	gulp.src('./dist')
 // 	.pipe(webserver({
 // 		livereload: true,
@@ -166,11 +174,14 @@ gulp.task("webpack", function(callback) {
 // 		open: false,
 // 		port: 8001
 // 	}));
-// });
+});
 
-// /** ----------------------------------------------
-//  * SVG SPRITE
-//  */
+
+
+
+/** ----------------------------------------------
+ * SVG SPRITE
+ */
 var svgstore = require('gulp-svgstore');
 var cheerio = require('gulp-cheerio');
 
@@ -189,42 +200,43 @@ gulp.task('svg', function () {
 });
 
 
-// /** ----------------------------------------------
-//  * Copy static files
-//  */
-// gulp.task('static', function () {
-// 	// Fonts
-// 		// .. just put at dist/fonts/
-// });
-
-// /** ----------------------------------------------
-//  * Image optimization
-//  */
-// gulp.task('images-optimize', function () {
-// 	gulp.src('./src/images/**/*.{png,jpg,jpeg,gif}')
-// 		.pipe(pngquant({quality: '65-80', speed: 4})())
-// 		.pipe(optipng({optimizationLevel: 3})())
-// 		.pipe(jpegoptim({max: 70, progressive: true})())
-// 		.pipe(svgo()())
-// 		.pipe(gulp.dest('./dist/images'));
-// });
-// gulp.task('images-clean', function () {
-//     return gulp.src('./dist/images', {read: false})
-//         .pipe(clean());
-// });
-// gulp.task('images', ['images-clean', 'images-optimize']);
 
 
-// /** ----------------------------------------------
-//  * Watch
-//  */
-// gulp.task('watch', function() {
-//     // gulp.watch('src/js/*.js', ['scripts']);
-//     gulp.watch('src/coffee/**/*.*', ['webpack']);
-//     gulp.watch('src/views/**/*.jade', ['jade']);
-//     gulp.watch('src/scss/**/*.scss', ['scss']);
-//     gulp.watch('src/images/**/*.*', ['images']);
-// });
+/** ----------------------------------------------
+ * Image optimization
+ */
+var pngquant = require('imagemin-pngquant');
+var optipng = require('imagemin-optipng');
+var jpegoptim = require('imagemin-jpegoptim');
+var svgo = require('svgo');
+var clean = require('gulp-clean');
 
-// gulp.task('default', ['jade', 'scss', 'webpack', 'watch', 'webserver']);
+gulp.task('images-optimize', function () {
+	gulp.src('./src/images/**/*.{png,jpg,jpeg,gif}')
+		.pipe(pngquant({quality: '65-80', speed: 4})())
+		.pipe(optipng({optimizationLevel: 3})())
+		.pipe(jpegoptim({max: 70, progressive: true})())
+		// .pipe(svgo()())
+		.pipe(gulp.dest('./dist/images'));
+});
+gulp.task('images-clean', function () {
+    return gulp.src('./dist/images', {read: false})
+        .pipe(clean());
+});
+gulp.task('images', ['images-clean', 'images-optimize']);
+
+
+
+
+/** ----------------------------------------------
+ * Watch
+ */
+gulp.task('watch', function() {
+    gulp.watch('src/coffee/**/*.*', ['webpack']);
+    gulp.watch('src/views/**/*.jade', ['jade']);
+    gulp.watch('src/scss/**/*.scss', ['scss']);
+    gulp.watch('src/images/**/*.*', ['images']);
+});
+
+gulp.task('default', ['jade', 'scss', 'webpack', 'watch', 'webserver']);
 // gulp.task('init', ['static', 'default']);

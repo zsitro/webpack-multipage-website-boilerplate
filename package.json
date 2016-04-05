@@ -17,12 +17,17 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cheerio": "^0.6.2",
+    "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.0",
     "gulp-jade": "^1.1.0",
     "gulp-prettify": "^0.4.0",
     "gulp-ruby-sass": "^2.0.6",
     "gulp-svgstore": "^6.0.0",
     "gulp-uglify": "^1.5.3",
+    "imagemin-jpegoptim": "^4.1.0",
+    "imagemin-optipng": "^4.3.0",
+    "imagemin-pngquant": "^4.2.2",
+    "svgo": "^0.6.3",
     "webpack-stream": "^3.1.0"
   }
 }
