@@ -24,6 +24,32 @@
 	hr{
 		// @extend .separator;
 	}
+	img{
+		max-width: 100%;
+		display: block;
+		@media screen and (max-width: 767px){
+		}
+		@media screen and (max-width: 480px){
+			width: calc( 100% + 30px );
+			max-width: none;
+			margin-left: -15px;
+			margin-right: -15px;
+		}
+		&.alignleft{
+			margin-left: 0;
+		}
+		&.alignright{
+			margin-right: 0;
+		}
+		&.alignright,
+		&.alignleft{
+			@media screen and (max-width: 767px){
+				margin-left: auto;
+				margin-right: auto;
+				width: auto;
+			}
+		}
+	}
 
 	ul, ol{
 		@extend p;
