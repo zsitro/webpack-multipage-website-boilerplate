@@ -4,10 +4,6 @@
 	top: 0px;
 }
 
-// @mixin pie{
-//     behavior: url('http://FULLURLHERE/scripts/vendor/PIE/PIE.php');
-// }
-
 @mixin debug($module){
 	 // @if $bool == true {
 	 	.#{$module}, .#{$module} *{
@@ -16,70 +12,20 @@
 	 // }
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////
-// Font face definition (Edmundas K.)
-// with IE6 and libsass node compiler (interpolation syntax) support (Gabor Z.)
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
-@mixin font-face($fontFamily, $fontPath) {
-	@font-face {
-		font: {
-			family: $fontFamily;
-			style: normal;
-			weight: normal;
-		}
-		src: url( #{$fontPath+'.eot'});
-	}
-
-	@font-face {
-		font: {
-			family: $fontFamily;
-			style: normal;
-			weight: normal;
-		}
-		src: url( #{$fontPath+'.eot'}) format('eot'),
-			 url( #{$fontPath+'.woff'}) format('woff'),
-			 url( #{$fontPath+'.ttf'})  format('truetype')//,
-			 //url( #{$fontPath+'-webfont.svg#' + $fontFamily}) format('svg');
-	}
-
+@mixin word-wrap() {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	word-break: break-word;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
 }
 
-@mixin cross-browser-inline-block {
-  display: inline-block; /* For normal, healthy browsers */
-
-  * html & { /* for IE6 */
-    display: inline;
-  }
-
-  *+html & { /* for IE7 */
-    display: inline;
-  }
+@mixin ellipsis() {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
-
-@mixin icon-face($name, $file, $spriteGroup:'spritesCommon') {
-	#{$name}{
-		background-image: url( #{'../images/sprites/'+$file+'.png?sprite='+$spriteGroup});
-	}
-}
-
-
-@mixin icon-face-a($name, $file, $spriteGroup:'spritesCommon') {
-	#{$name}{
-		background-image: url( #{'../images/sprites/'+$file+'.png?sprite='+$spriteGroup});
-
-		&:hover{
-			background-image: url( #{'../images/sprites/'+$file+'-hover.png?sprite='+$spriteGroup});
-		}
-	}
-
-	a:hover,a.is-active{
-		#{$name}{
-			background-image: url(#{'../images/sprites/'+$file+'-hover.png?sprite='+$spriteGroup});
-		}
-	}
-
-}
-
-
 
