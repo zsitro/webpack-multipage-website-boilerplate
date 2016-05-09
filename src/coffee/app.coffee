@@ -6,6 +6,11 @@ class App
 		@lang = $('html').attr 'lang'
 		@version =
 			localStorage: .1
+		@CONST =
+			BREAKPOINT_MOBILE_MAX: 767
+			BREAKPOINT_TABLET_MIN: 768
+			BREAKPOINT_TABLET_MAX: 991
+			BREAKPOINT_DESKTOP_MIN: 992
 	events :
 		# Dead simple receiver, can be replaced anytime
 		trigger : (ev) ->
