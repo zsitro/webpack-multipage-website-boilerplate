@@ -44,3 +44,11 @@ jquery.populate // Refill forms from uri/json
 angular-touch
 jcrop // Picture cropper - see on Findafitness
 ```
+
+## TODOs
+
+- [] Add nifty underlines for .content `<a>`
+- [] Add `z-index` scale?
+- [] Update autoprefixer parameter for iOS in `gulpfile.js`
+- [] Refactor classnames to camelcase if there's any
+- 
