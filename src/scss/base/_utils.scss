@@ -11,9 +11,6 @@
 	margin-left: auto;
 	margin-right: auto;
 }
-.u-fw-300{
-	font-weight: 300 !important;
-}
 // .u-blurry{
 // 	position: relative;
 // 	background-image: none;
@@ -29,20 +26,24 @@
 // 		content: '';
 // 	}
 // }
-
 .u-sprite{
 	background-position: center;
 	background-repeat: no-repeat;
 }
-
 .u-overflow-hidden{
-	position: relative;
 	overflow: hidden;
+	position: relative;
 }
-
 .u-cover{
 	@extend .u-sprite;
 	background-size: cover;
+}
+.u-snap{
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
 }
 .u-tt-none{text-transform: none !important;}
 
@@ -53,6 +54,7 @@
 
 .u-inline,
 .u-inlineblock{width: auto !important;display:inline-block;}
+
 // .table{display:table;}
 // .tablerow{display:table-row;}
 // .tablecell{display:table-cell;}
@@ -68,14 +70,11 @@
 
 .u-fit{ max-width: 100%;}
 .u-fill{ width: 100% !important;}
-
 .u-zlift{
 	z-index: 2;
 	position: relative;
 }
-
 .pointer{ cursor:pointer}
-
 .clearfix:after {
 	content: ".";
 	display: block;
@@ -85,12 +84,13 @@
 	height: 0;
 }
 
+// Should be never used, deprecate probably?
+// ---------------------------------------------- /
 .u-p10{ padding: 10px; }
 .u-p15{ padding: 15px; }
 .u-p20{ padding: 20px; }
 .u-p30{ padding: 30px; }
 .u-p40{ padding: 40px; }
-
 
 .u-pt10{ padding-top: 10px !important; }
 .u-pt15{ padding-top: 15px; }
@@ -118,9 +118,3 @@
 .u-ml30{ margin-left: 30px; }
 .u-mr30{ margin-right: 30px; }
 .u-mr15{ margin-right: 15px; }
-
-// .padside15{ padding-left: 15px; padding-right: 15px; }
-
-// .borderleft{border-left: 1px solid $colorGrayLighter;}
-// .borderright{border-right: 1px solid $colorGrayLighter;}
-// .borderbottom{border-bottom: 1px solid $colorGrayLighter;}
