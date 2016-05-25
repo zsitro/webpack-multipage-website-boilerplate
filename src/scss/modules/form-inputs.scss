@@ -8,25 +8,25 @@ input[type=password].form-control,
 textarea.form-control{
 	border-radius: 5px;
 	border-width: 1px;
-	border-color: $colorBorder;
+	border-color: $cBorder;
 	border-style: solid;
 	background-color: white;
 	width: 100%;
-	font-family: $fontDefault;
+	font-family: $fDefault;
 	font-size: 0.813rem;
 	font-weight: 400;
-	color: $colorLight;
+	color: $cLight;
 	height: $inputHeight;
 	padding: 10px 10px;
 	-webkit-appearance: none;
 	&:placeholder{
 		font-weight: 300;
-		color: $colorLighter;
+		color: $cLighter;
 	}
 	&:hover,
 	&:focus{
-		border-color: $colorDark;
-		color: $colorDark;
+		border-color: $cDark;
+		color: $cDark;
 		outline: 0 !important;
 	}
 	&.form-control--100{

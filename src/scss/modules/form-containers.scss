@@ -3,7 +3,7 @@
 .form{
 	fieldset{
 		margin-bottom: 1rem;
-		border-bottom: 1px solid $colorLight;
+		border-bottom: 1px solid $cLight;
 		&:last-child{
 			border: 0;
 		}
@@ -18,7 +18,7 @@
 			line-height: 1.2;
 			display: block;
 			margin-top: .45rem;
-			color: rgba($colorDark, .8);
+			color: rgba($cDark, .8);
 		}
 	}
 	.legend-sub{
@@ -33,15 +33,15 @@
 		border: 0;
 		height: 1px;
 		width: 100%;
-		background: $colorLight;
+		background: $cLight;
 		margin: 1.5rem 0 2rem;
 	}
 
 	.label-success{
-		color: $colorSuccess;
+		color: $cSuccess;
 	}
 	.label-danger{
-		color: $colorError;
+		color: $cError;
 	}
 }
 
@@ -94,16 +94,16 @@
 
 
 	&.has-error{
-		color: $colorError;
+		color: $cError;
 		.form-control{
-			border-color: $colorError;
+			border-color: $cError;
 		}
 	}
 }
 .control-label{
 	font-size: 0.913rem;
 	font-weight: 600;
-	// color: $colorDark;
+	// color: $cDark;
 	display: inline-block;
 	margin-bottom: .6rem;
 	&--inline{
@@ -126,7 +126,7 @@
 		color: black;
 		border-width: 1px 0 1px 1px;
 		border-style: solid;
-		border-color: $colorBorder;
+		border-color: $cBorder;
 		border-top-left-radius: 3px;
 		border-bottom-left-radius: 3px;
 		font-weight: bold;

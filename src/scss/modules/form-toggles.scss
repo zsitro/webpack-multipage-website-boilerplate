@@ -40,7 +40,7 @@
 		font-size:15px;
 		vertical-align:middle;
 		cursor:pointer;
-		border: 1px solid $colorLight;
+		border: 1px solid $cLight;
 		border-radius: 3px;
 		position: relative;
 		bottom: 1px;
@@ -63,7 +63,7 @@
 	// CHECKED CAPTION
 	// input:checked + label{
 	input + label:hover{
-		color: $colorGreen;
+		color: $cGreen;
 	}
 	// CHECKBOX CHECKED
 	input[type=checkbox]:checked + label:before {
@@ -73,8 +73,8 @@
 	}
 	// RADIO CHECKED
 	input[type=radio]:checked + label:before {
-		border-color: $colorGreen;
-		background: $colorGreen;
+		border-color: $cGreen;
+		background: $cGreen;
 	}
 }
 
@@ -120,7 +120,7 @@
 	}
 	// CHECKBOX UNCHECKED
 	input[type=checkbox] + label:before {
-		border: 1px solid $colorLight;
+		border: 1px solid $cLight;
 		// ...
 	}
 	// RADIO UNCHECKED
@@ -129,7 +129,7 @@
 	}
 	// CHECKBOX CHECKED
 	input[type=checkbox]:checked + label:before {
-		// background: $colorGreen;
+		// background: $cGreen;
 		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAAp0lEQVQoz2NIXaPNQCKeAsSPSdHAAcQbgfg/EFcQq0kUiPdANdWDxIjRJA3ER6CaJsLECWnSAuLbUE0rkeXwabID4jdQTVuBmBVdYwsQK6Jp8gTid1BNx4FYCN1gELENqigSKhgKxN+hmq4CsQQ2F4EIcSD+CFV4Goj/Qtn3gFgJl1dgjDSoYhj+CvUjAyGNbEB8AKrpO9SPDMRoBGFzIL4FxMnEJAoAreH1HNQ0tcoAAAAASUVORK5CYII=);
 		background-position: center;
 		background-repeat: no-repeat;
@@ -138,7 +138,7 @@
 	// RADIO CHECKED
 	input[type=radio]:checked + label:before {
 		border-color: white;
-		background: $colorGreen;
+		background: $cGreen;
 	}
 }
 
@@ -175,7 +175,7 @@
 	}
 	input[type=checkbox]:checked{
 		 + label {
-			color: $colorPrimary;
+			color: $cPrimary;
 		 	.icon {
 				background-position: center bottom;
 			}

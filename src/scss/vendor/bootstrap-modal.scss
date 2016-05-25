@@ -78,7 +78,7 @@
 .modal-header {
 	padding: 1rem;
 	min-height: 2rem;
-	background: $colorDark;
+	background: $cDark;
 	color: white;
 	font-size: 1.2rem;
 }
@@ -115,7 +115,7 @@
 	padding: 1rem 2rem;
 	text-align: right; // right align buttons
 	background: #f5f5f5;
-	border-top: 1px solid $colorBorder;
+	border-top: 1px solid $cBorder;
 	// @include .clearfix; // clear it in case folks use .pull-* classes on buttons
 
 	// Properly space out buttons
@@ -167,7 +167,7 @@
 		overflow: hidden;
 		border: 0;
 		.modal-header{
-			background: $colorGreen;
+			background: $cGreen;
 
 			.close{
 				color: white;
@@ -203,7 +203,7 @@
 			.modal-title{
 				font-weight: 700;
 				font-size: 1.25rem;
-				color: $colorDark;
+				color: $cDark;
 			}
 		}
 	}

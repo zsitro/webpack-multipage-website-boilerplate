@@ -13,8 +13,8 @@ body{
 	margin: 0;
 	line-height: 1.1em;
 	position: relative;
-	font-family: $fontDefault;
-	color: $colorDefault;
+	font-family: $fDefault;
+	color: $cDefault;
 	font-size: 16px;
 }
 
@@ -25,12 +25,12 @@ p{
 hr{
 	height: 1px;
 	border: 0;
-	background: $colorBorder;
+	background: $cBorder;
 	margin-bottom: 1rem;
 }
 
 a{
-	color: $colorLink;
+	color: $cLink;
 	text-decoration: none;
 	cursor: pointer;
 	&:hover{
@@ -38,11 +38,11 @@ a{
 	}
 }
 strong{
-	font-family: $fontContentBold;
+	font-family: $fContentBold;
 	font-weight: normal;
 }
 em{
-	font-family: $fontContentItalic;
+	font-family: $fContentItalic;
 	font-style: normal;
 }
 small{

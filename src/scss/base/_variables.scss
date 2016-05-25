@@ -1,75 +1,77 @@
 // FONT FACES & dimension
 // ---------------------------------------------- /
-$fontArial:		arial, Helvetica, sans-serif;
-$fontTimes:		'Times New Roman', serif;
-$fontDefault: 	$fontArial;
-$fontSize:		16px;
+$fArial:		arial, Helvetica, sans-serif;
+$fTimes:		'Times New Roman', serif;
+$fDefault: 	$fArial;
+$fSize:		16px;
 
 
-$fontSansLight: OpenSansLight, $fontArial;
-$fontSansRegular: OpenSansRegular, $fontArial;
-$fontSansSemibold: OpenSansSemibold, $fontArial;
-$fontSansBold: OpenSansBold, $fontArial;
-$fontSansItalic: OpenSansItalic, $fontArial;
-// $fontSansBoldItalic: $fontOpensansBoldItalic;
+$fSansLight: OpenSansLight, $fArial;
+$fSansRegular: OpenSansRegular, $fArial;
+$fSansSemibold: OpenSansSemibold, $fArial;
+$fSansBold: OpenSansBold, $fArial;
+$fSansItalic: OpenSansItalic, $fArial;
+// $fSansBoldItalic: $fOpensansBoldItalic;
 
-$fontSerifRegular: $fontTimes;
+$fSerifRegular: $fTimes;
 // ...
 
 // FONTS - ALIASES
 // ---------------------------------------------- /
-$fontContent: $fontDefault;
-$fontContentBold: $fontArial;
-$fontContentSemibold: $fontArial;
-$fontContentItalic: $fontArial;
+$fContent: $fDefault;
+$fContentBold: $fArial;
+$fContentSemibold: $fArial;
+$fContentItalic: $fArial;
 
 // COLOR NAMES
 // ---------------------------------------------- /
-$colorDark: #666;
-$colorLight: #aaa;
-$colorLighter: #ddd;
-$colorYellow: #cfb500;
-$colorRed: #db5757;
-$colorBlue: #0072bc;
-$colorGreen: #007233;
+$cDark: #666;
+$cLight: #aaa;
+$cLighter: #ddd;
+$cYellow: #cfb500;
+$cRed: #db5757;
+$cBlue: #0072bc;
+$cGreen: #007233;
 
 // COLOR THEME
 // ---------------------------------------------- /
-$colorPrimary: $colorRed;
-$colorSecondary: $colorBlue;
+$cPrimary: $cRed;
+$cSecondary: $cBlue;
 
 	// COLORS - ELEMENTS
-	// ---------------------------------------------- /
-	$colorDefault: $colorDark;
-	$colorLink: $colorRed;
-	$colorBorder: $colorRed;
-	$colorPlaceholder: $colorLighter;
+	// ------------------------------------------ /
+	$cDefault: $cDark;
+	$cLink: $cRed;
+	$cBorder: $cRed;
+	$cPlaceholder: $cLighter;
 
 
 	// COLORS - MESSAGES
-	// ---------------------------------------------- /
-	$colorInfo: #0072BB;
-	$colorWarning: #EE6D29;
-	$colorWarningLight: #cfb500;
-	$colorError: #a00;
-	$colorSuccess: $colorGreen;
+	// ------------------------------------------ /
+	$cInfo: #0072BB;
+	$cWarning: #EE6D29;
+	$cWarningLight: #cfb500;
+	$cError: #a00;
+	$cSuccess: $cGreen;
 
 // COLORS - SOCIAL & BRANDS
 // ---------------------------------------------- /
-$colorFacebook: #3b5998;
-$colorTwitter: #00acef;
-$colorGoogle: #db3f1c;
-$colorYotube: #cd201f;
-$colorPinterest: #c91618;
-$colorInstagram: #2a5b83;
-$colorLinkedin: #0076b2;
+$cFacebook: #3b5998;
+$cTwitter: #00acef;
+$cGoogle: #db3f1c;
+$cYotube: #cd201f;
+$cPinterest: #c91618;
+$cInstagram: #2a5b83;
+$cLinkedin: #0076b2;
 
 // DIMENSIONS
 // ---------------------------------------------- /
 
 $siteWidth:	1170px;
 $inputHeight: 36px;
+$gutterWidth: 15px;
 
 // EASINGS
 // ---------------------------------------------- /
 $easingDefault: cubic-bezier(0.395, 0.425, 0.015, 1);
+$e: $easingDefault;

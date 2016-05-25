@@ -7,19 +7,19 @@
 		font-size: .8em;
 	}
 	td,	th{
-		border-bottom: 1px solid $colorLight;
+		border-bottom: 1px solid $cLight;
 		padding: 1rem 1rem 1rem 0.5rem;
 		text-align: left;
 	}
 	th{
-		color: $colorPrimary;
+		color: $cPrimary;
 		font-weight: 700;
 		vertical-align: bottom;
 	}
 	tr{
 		&:hover td{
-			background: $colorLighter;
-			background: rgba($colorPrimary, .15);
+			background: $cLighter;
+			background: rgba($cPrimary, .15);
 		}
 	}
 

@@ -42,7 +42,7 @@
 	text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
 	background-color: white;
 	// border: 1px solid $dropdown-fallback-border; // IE8 fallback
-	border: 1px solid $colorLighterer;
+	border: 1px solid $cLighterer;
 	border-radius: 6px;
 	// @include box-shadow(0 6px 12px rgba(0,0,0,.175));
 	background-clip: padding-box;
@@ -73,7 +73,7 @@
 		margin-top: 1px;
 	}
 	&:before{
-		border-bottom-color: $colorLighterer;
+		border-bottom-color: $cLighterer;
 		border-width: 12px;
 		margin-top: 0px;
 	}
@@ -99,7 +99,7 @@
 		font-weight: normal;
 		font-size: .93rem;
 		// line-height: $line-height-base;
-		color: $colorDark;
+		color: $cDark;
 		white-space: nowrap; // prevent links from randomly breaking onto new lines
 	}
 }
@@ -109,7 +109,7 @@
 	&:hover,
 	&:focus {
 		text-decoration: none;
-		color: $colorGreen;
+		color: $cGreen;
 		// background-color: $dropdown-link-hover-bg;
 	}
 }
