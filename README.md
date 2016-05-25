@@ -49,5 +49,5 @@ jcrop // Picture cropper - see on Findafitness
 
 - [ ] Add nifty underlines for .content `<a>`
 - [ ] Add `z-index` scale?
-- [ ] Update autoprefixer parameter for iOS in `gulpfile.js`
+- [x] Update autoprefixer parameter for iOS in `gulpfile.js`
 - [ ] Refactor classnames to camelcase if there's any

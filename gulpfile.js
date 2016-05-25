@@ -50,7 +50,11 @@ gulp.task('scss', function() {
 		.on('error', function (err) {
 			console.error('Error', err.message);
 		})
-        .pipe(autoprefixer('last 2 version', 'ie 10'))
+        .pipe(autoprefixer({
+			browsers: ['last 2 versions', 'last 3 iOS versions'],
+			cascade: false,
+			flexbox: true,
+		}))
         .pipe(gulp.dest('dist/css'));
 });
 
