@@ -48,6 +48,6 @@ jcrop // Picture cropper - see on Findafitness
 ## TODOs
 
 - [ ] Add nifty underlines for .content `<a>`
-- [ ] Add `z-index` scale?
+- [x] Add `z-index` scale?
 - [x] Update autoprefixer parameter for iOS in `gulpfile.js`
 - [ ] Refactor classnames to camelcase if there's any

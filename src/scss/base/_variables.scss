@@ -64,9 +64,19 @@ $cPinterest: #c91618;
 $cInstagram: #2a5b83;
 $cLinkedin: #0076b2;
 
+// zScale
+// ---------------------------------------------- /
+$zBelow: -1;
+$zBase: 0;
+$zRaise: 1;
+$zCover: 2;
+$zDropdown: 3;
+$zNotification: 4;
+$zTooltip: 5;
+$zOverlay: 6;
+
 // DIMENSIONS
 // ---------------------------------------------- /
-
 $siteWidth:	1170px;
 $inputHeight: 36px;
 $gutterWidth: 15px;
