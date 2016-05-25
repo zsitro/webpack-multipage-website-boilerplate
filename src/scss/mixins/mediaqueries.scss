@@ -1,0 +1,58 @@
+$mobileWidthSmall: 480px;
+$mobileWidthMax: 767px;
+$tabletWidthMin: 768px;
+$tabletWidthMax: 991px;
+$desktopWidthMin: 992px;
+$desktopWidthLarge: 1280px;
+
+@mixin mobileSmall {
+	@media (max-width: #{$mobileWidthSmall}) {
+		@content;
+	}
+}
+@mixin mobile {
+	@media (max-width: #{$mobileWidthMax}) {
+		@content;
+	}
+}
+@mixin tablet {
+	@media (max-width: #{$tabletWidthMax}) {
+		@content;
+	}
+}
+@mixin tabletOnly {
+	@media (min-width: #{$tabletWidthMin}) and (max-width: #{$tabletWidthMax}) {
+		@content;
+	}
+}
+// @mixin desktop { // You should probably use this rare
+// 	@media (min-width: #{$desktopWidthMin}) {
+// 		@content;
+// 	}
+// }
+// @mixin desktopLarge {
+// 	@media (min-width: #{$desktopWidthLarge}) {
+// 		@content;
+// 	}
+// }
+
+// @mixin brakepointTablet {
+// 	@media (min-width: #{$desktopWidthLarge}) {
+// 		@content;
+// 	}
+// }
+
+// TESTS:
+// ---------------------------------------------- /
+.mediaTest{
+	color: red;
+	@include tablet{
+		color: green;
+	}
+	@include tabletOnly{
+		color: blue;
+	}
+	@include mobileSmall{
+		color: pink;
+	}
+}
