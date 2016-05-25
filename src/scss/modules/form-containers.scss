@@ -151,7 +151,7 @@
 	float: left;
 	margin-right: 1.4rem;
 	min-width: 5rem;
-	@media screen and (max-width: 767px){
+	@include mobile{
 		float: none;
 		display: block;
 	}

@@ -51,3 +51,8 @@ jcrop // Picture cropper - see on Findafitness
 - [x] Add `z-index` scale?
 - [x] Update autoprefixer parameter for iOS in `gulpfile.js`
 - [ ] Refactor classnames to camelcase if there's any
+
+
+## License
+
+- MIT for all, except the svg folder's content, which is for my personal use only.

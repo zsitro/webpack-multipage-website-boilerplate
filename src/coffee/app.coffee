@@ -44,7 +44,7 @@ class App
 
 		# require('./Components/Map.coffee').init()
 		# require('./Components/Header.coffee').init()
-		# require('./Components/Mainmenu.coffee').init()
+		require('./Components/Mobilemenu.coffee').init()
 		# require('./Components/Share.coffee').init()
 		# require('./Components/Popovers.coffee').init()
 

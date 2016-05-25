@@ -1,6 +1,4 @@
-body{
-	color: red;
-}
+$debugMode: 1;
 // Mixins
 @import "mixins/dopamine";
 @import "mixins/mediaqueries";
@@ -43,6 +41,8 @@ body{
 @import "modules/table";
 @import "modules/dopamine";
 // @import "modules/tooltip";
+@import "modules/mainmenu";
+@import "modules/mobilemenu";
 //ModuleInsertReference
 
 // Pages

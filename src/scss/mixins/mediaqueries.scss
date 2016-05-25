@@ -30,11 +30,11 @@ $desktopWidthLarge: 1280px;
 // 		@content;
 // 	}
 // }
-// @mixin desktopLarge {
-// 	@media (min-width: #{$desktopWidthLarge}) {
-// 		@content;
-// 	}
-// }
+@mixin desktopLarge {
+	@media (min-width: #{$desktopWidthLarge}) {
+		@content;
+	}
+}
 
 // @mixin brakepointTablet {
 // 	@media (min-width: #{$desktopWidthLarge}) {

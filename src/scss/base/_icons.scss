@@ -6,4 +6,18 @@ svg{
 	display: inline-block;
 	position: relative;
 	// outline: 1px dashed red;
+
+	&.has-sameHeight{
+		font-size: 1em !important;
+		// width: 1em !important;
+		// height: 1em !important;
+	}
+}
+
+.icon{}
+.icon--beforeText{
+	margin-right: .3em;
+}
+.icon--afterText{
+	margin-left: .3em;
 }

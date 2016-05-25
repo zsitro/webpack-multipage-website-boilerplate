@@ -1,0 +1,47 @@
+// Generated on 2016-05-25 using generator-dp 0.0.1
+.mainmenu{
+	@include debug();
+	> ul{
+		display: flex;
+		> li{
+			> a{
+				min-height: 5rem;
+				display: flex;
+				align-items: center;
+				padding: 1rem 1rem;
+				@include debug(magenta);
+
+				span{
+					display: inline-block;
+				}
+				svg{
+					font-size: 2em;
+				}
+				span + svg,
+				svg	+ span{
+					margin-left: $iconSpacing;
+				}
+			}
+
+			// SUBMENU - DROPDOWN
+			// ---------------------------------------------- /
+			> ul{
+				display: none;
+				position: absolute;
+				min-width: 10rem;
+				background: red;
+				li{
+					a{
+						display: flex;
+						color: white;
+					}
+				}
+			}
+			&:hover{
+				ul{
+					display: block;
+				}
+			}
+		}
+	}
+}

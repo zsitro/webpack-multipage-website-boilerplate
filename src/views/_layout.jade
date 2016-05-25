@@ -1,5 +1,6 @@
 //- IMPORTS
 block subpage_data
+include _shared
 include dopamine/dp-doc
 include dopamine/dp-head
 include dopamine/dp-snippets-inline
@@ -27,13 +28,54 @@ head
 
 	//- +dp_vendor('modernizr')
 
-body(class=dp.page.class)
+body(class=dp.page.class).is-loading
 	div(style="position:absolute;height:0;width:0;visibility:hidden;overflow:hidden;")
 		include ../../dist/svg/svg.svg
 	//- +dpsn_oldies()
 
 	// COMMON HEADER
-	h1 Header yeey!
+	header(header,class=dp.page.header_class,background=dp.page.header_image).header
+		.header-bar
+			.header-bar-inner
+				.logo
+					a(href="#") LOGO HERE
+				nav.mainmenu.hidden-xs
+					ul
+						li
+							a(href="page1.html")
+								span Item 1
+						li
+							a(href="page2.html")
+								span Item 2
+								svg.has-sameHeight
+									use(xlink:href="#chevron-down")
+							ul
+								li
+									a(href="page2-sub-1.html") Subitem 1
+								li
+									a(href="page2-sub-2.html") Subitem 2
+								li
+									a(href="page2-sub-3.html") Subitem 3
+				nav.mainmenu
+					ul
+						li
+							a(href="tel:1234")
+								svg
+									use(xlink:href="#call")
+								span.hidden-xs + 1234 342 34
+				nav.mainmenu
+					ul
+						li
+							a(mobilemenu-handler, href="javascript:;")
+								span Menu
+								svg
+									use(xlink:href="#menu")
+
+		+mobilemenuContent()
+
+		.header-content
+			.header-content-inner
+				block header_content
 	// END OF COMMON HEADER
 
 

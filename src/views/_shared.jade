@@ -1,0 +1,7 @@
+mixin mobilemenuContent()
+	.mobilemenu(mobilemenu-content)
+		nav.mobilemenu-items
+			ul
+				li(class=dp.page.slug === "index" ? "is-active" : "") Index
+				li(class=dp.page.slug === "page-2" ? "is-active" : "") Page 2
+				li(class=dp.page.slug === "page-3" ? "is-active" : "") Page 3

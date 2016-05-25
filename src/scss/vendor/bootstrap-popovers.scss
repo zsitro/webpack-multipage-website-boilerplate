@@ -35,7 +35,7 @@ $black_25: rgba(0, 0, 0, .25);
 	background-clip: padding-box;
 	line-break: auto;
 
-	@media screen and (max-width: 480px){
+	@include mobileSmall{
 		max-width: 300px;
 	}
 	&.top {

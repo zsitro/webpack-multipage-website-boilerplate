@@ -1,0 +1,45 @@
+// Generated on 2016-01-29 using generator-dp 0.0.1
+$mobilemenuWidth: 320px;
+
+.mobilemenu{
+	@extend .clearfix;
+	position: fixed;
+	width: $mobilemenuWidth;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: $zRaise;
+	transform: translateX(100%);
+	background: blue;
+	overflow: auto;
+	overflow-x: hidden;
+	transition: transform 400ms $easingDefault;
+	padding-top: $headerMinHeight;
+	padding-bottom: 4rem;
+	background-image: none !important;
+	> *{
+		z-index: 1;
+	}
+
+	@media screen and (max-width: $mobilemenuWidth){
+		width: 100%;
+	}
+
+
+	@media screen and (max-width: 767px){
+		// top: 60px;
+	}
+
+	&-items{
+		> ul{
+			> li{
+				> a{
+					display: flex;
+				}
+			}
+		}
+	}
+	&.is-opened{
+		transform: translateX(0);
+	}
+}

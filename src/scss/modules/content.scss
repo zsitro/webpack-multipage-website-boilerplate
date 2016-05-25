@@ -27,9 +27,9 @@
 	img{
 		max-width: 100%;
 		display: block;
-		@media screen and (max-width: 767px){
+		@include mobile{
 		}
-		@media screen and (max-width: 480px){
+		@include mobileSmall{
 			width: calc( 100% + 30px );
 			max-width: none;
 			margin-left: -15px;
@@ -43,7 +43,7 @@
 		}
 		&.alignright,
 		&.alignleft{
-			@media screen and (max-width: 767px){
+			@include mobile{
 				margin-left: auto;
 				margin-right: auto;
 				width: auto;
@@ -60,7 +60,7 @@
 		margin-right: 4rem;
 		margin-bottom: 1rem;
 
-		@media screen and (max-width: 767px){
+		@include mobile{
 			padding-left: 0.5rem;
 			margin-left: 1rem;
 			margin-right: 2rem;

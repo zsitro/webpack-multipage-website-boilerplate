@@ -6,6 +6,7 @@ block subpage_data
 	- dp.page.class = "l-"+dp.page.slug
 	- dp.page.description = "Dopamine is a lightweight Node app to ease sitebuilding with modular Jade templates and Stylus"
 	- dp.page.keywords = "dopamine,sitebuild,jade,stylus"
+	- dp.page.header_class = "header--full"
 
 mixin article(title,imgsrc)
 	article
@@ -15,8 +16,10 @@ mixin article(title,imgsrc)
 block subpage_scripts
 	script(src='scripts/application.home.js')
 
+block header_content
+	h1 Webpack Boilerplate
 
 block content
 	hr
-	h1 Content
+	h1 Content Yeey
 	hr

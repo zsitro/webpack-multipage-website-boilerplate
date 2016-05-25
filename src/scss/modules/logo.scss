@@ -1,7 +1,10 @@
 // Generated on 2014-10-08 using generator-dp 0.0.1
 .logo{
+	@include debug;
 	position: relative;
-	float: left;
+	margin-right: auto;
+	// outline: 1px solid red;
+	// float: left;
 
 	h1{
 		position: absolute;
@@ -15,23 +18,14 @@
 		height: 36px;
 		margin: 0px 0 0;
 		position: relative;
-		top: 1px;
-		// background-image: url();
-		background-size: 171px 35px;
+		@include debug(green);
 		background-repeat: no-repeat;
-		@media screen and (max-width: 767px){
-			margin-left: auto;
-			margin-right: auto;
+
+		@include mobile{
+			//
 		}
 	}
 
 
 
-}
-.logo--black{
-	a{
-		// background-image: url();
-		width: 182px;
-		height: 36px;
-	}
 }

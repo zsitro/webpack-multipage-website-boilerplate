@@ -1,0 +1,1 @@
+Every file in this folder is copyrighted, you can not use them for any purpose.

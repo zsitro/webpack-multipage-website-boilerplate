@@ -74,6 +74,12 @@
 	    this.version = {
 	      localStorage: .1
 	    };
+	    this.CONST = {
+	      BREAKPOINT_MOBILE_MAX: 767,
+	      BREAKPOINT_TABLET_MIN: 768,
+	      BREAKPOINT_TABLET_MAX: 991,
+	      BREAKPOINT_DESKTOP_MIN: 992
+	    };
 	  }
 
 	  App.prototype.events = {
@@ -93,6 +99,7 @@
 	    __webpack_require__(7).attachListener();
 	    __webpack_require__(8).init();
 	    __webpack_require__(9).init().addClassesOn('html').attachTo(this);
+	    __webpack_require__(10).init();
 	    if (this.utils.isPage('contact')) {
 
 	    }
@@ -297,6 +304,9 @@
 	      i++;
 	    }
 	  },
+	  isRetina: function() {
+	    return ((window.matchMedia && (window.matchMedia('only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx), only screen and (min-resolution: 75.6dpcm)').matches || window.matchMedia('only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)').matches)) || (window.devicePixelRatio && window.devicePixelRatio >= 2)) && /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
+	  },
 	  searchVersion: function(dataString) {
 	    var index;
 	    index = dataString.indexOf(this.versionSearchString);
@@ -374,6 +384,10 @@
 	      subString: 'iPhone',
 	      identity: 'iPhone-iPod'
 	    }, {
+	      string: navigator.userAgent,
+	      subString: 'iPad',
+	      identity: 'iPhone-iPod'
+	    }, {
 	      string: navigator.platform,
 	      subString: 'Linux',
 	      identity: 'Linux'
@@ -407,9 +421,51 @@
 	      $target.removeClass('Mozilla');
 	      $target.addClass('Explorer');
 	    }
+	    if (!!navigator.userAgent.match(/Trident.*rv[ :]*11\./)) {
+	      $target.addClass('ie-11');
+	    }
+	    if (eval("/*@cc_on!@*/false") && document.documentMode === 10) {
+	      $target.addClass('ie-10');
+	    }
+	    if (/MSIE\s/.test(navigator.userAgent) && parseFloat(navigator.appVersion.split("MSIE")[1]) < 10) {
+	      $target.addClass('ie-9');
+	    }
+	    if (browserDetection.isRetina()) {
+	      $target.addClass('Retina');
+	    }
 	    return this;
 	  }
 	};
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	var $content, $handler, $headerBar, init, toggleMenu;
+
+	$handler = $('[mobilemenu-handler]');
+
+	$content = $('[mobilemenu-content]');
+
+	$headerBar = $('[header-bar]');
+
+	toggleMenu = function() {
+	  $content.toggleClass('is-opened');
+	  $handler.toggleClass('is-active');
+	  if ($content.hasClass('is-opened')) {
+	    return App.utils.scrollTo($handler);
+	  }
+	};
+
+	init = function() {
+	  return $handler.on('click', function(e) {
+	    e.preventDefault();
+	    return toggleMenu();
+	  });
+	};
+
+	module.exports.init = init;
 
 
 /***/ }
