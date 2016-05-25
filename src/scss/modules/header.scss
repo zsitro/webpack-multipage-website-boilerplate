@@ -1,15 +1,54 @@
 // Generated on 2014-10-08 using generator-dp 0.0.1
-.header{
+$topHeight: 70px;
 
-	$topHeight: 57px;
+.header{
 	position: relative;
-	z-index: 3;
+	z-index: 4;
 	color: white;
 	height: $topHeight;
 	backface-visibility: hidden;
+	background: white;
+	transition: all 600ms $e;
 
 	@media screen and (max-width: 767px){
-		background-position: center;
+		height: 60px;
+	}
+
+	&-scroll{
+		position: absolute;
+		bottom: 0;
+		right: 2rem;
+		z-index: 2;
+		transition: all 300ms $e;
+		@media screen and (max-width: 991px){
+			bottom: -60px;
+		}
+
+		&.has-bounce{
+			@extend .animated;
+			@extend .bounce;
+			animation-iteration-count: 2;
+			animation-duration: 2.5s;
+		}
+		.icon--chevron-right{
+			&:before{
+				top: 0px;
+				left: 1px;
+			}
+		}
+
+	}
+	&-video{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+		opacity: 1;
+		@media screen and (max-width: 991px){
+			display: none;
+		}
 	}
 	&-top{
 		padding:25px;
@@ -19,74 +58,129 @@
 		right: 0;
 		z-index: 6;
 	}
-	// &-bottom{
-	// 	position: absolute;
-	// 	bottom: 0;
-	// 	left: 0;
-	// 	right: 0;
-	// 	background: rgba(0, 0, 0, .3);
-	// 	&--darker{
-	// 		background: rgba(0, 0, 0, .6);
-	// 	}
-	// }
+	&-content{
+
+		&-inner{
+			position: relative;
+			max-width: $siteWidth;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&-suptitle{
+		}
+		&-title{
+			line-height: 1.2;
+			@media screen and (max-width: 768px){
+				// font-size: 1.7rem;
+			}
+			@media screen and (max-width: 480px){
+				// font-size: 1.4rem;
+			}
+		}
+	}
+	&-bar{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 70px;
+		background: white;
+		color: white;
+		z-index: 2;
+
+		@media screen and (max-width: 767px){
+			height: 60px;
+		}
+
+		&.is-ontop{
+			position: fixed;
+			top: 0;
+			bottom: auto;
+		}
+		&.is-fixed{
+			position: fixed;
+			top: 0;
+			box-shadow: 0 0 14px rgba($cDark, .6);
+		}
+	}
 }
 
-// .header--faded{
-// 	position: relative;
-// 	&:before{
-// 		content: '';
-// 		display: block;
-// 		position: absolute;
-// 		top: 0;
-// 		bottom: 0;
-// 		left: 0;
-// 		right: 0;
-// 		background: rgba(0,0,0, .5);
-// 		z-index: 1;
-// 	}
-// 	.alignbox{
-// 		position: relative;
-// 		z-index: 2;
-// 	}
-// }
-// .header--full{
-// 	height: calc(100%);
-// 	background-size: cover;
-// 	background-position: center top;
+.header--full{
+	height: calc(100%);
+	background-size: cover;
+	background-position: center top;
 
-// 	@media screen and (max-height: 480px){
-// 		height: 480px;
-// 	}
-// 	@media screen and (max-width: 767px){
-// 		height: auto;
-// 		min-height: 100%;
-// 		.alignbox{
-// 			padding-top: 10rem;
-// 		}
-// 	}
-// }
-// .header--tall{
-// 	height: 30rem;
-// 	background-size: cover;
-// }
-// .header--medium{
-// 	height: 25rem;
-// 	background-size: cover;
-// 	@media screen and (max-width: 767px){
-// 		height: auto;
-// 	}
-// }
-// .header--green{
-// 	background-color: $cGreen;
-// }
-// .header--condensed{
-// 	height: 20rem;
-// 	background-size: cover;
-// 	@media screen and (max-width: 767px){
-// 		height: 15rem;
-// 	}
-// }
+	@media screen and (max-height: 480px){
+		height: 480px;
+	}
+	@media screen and (max-width: 767px){
+		height: auto;
+		min-height: 100%;
+		.alignbox *{
+			position: relative;
+		}
+	}
+}
+.header--scan{
+	margin-top: 60px;
+	background-attachment: fixed;
+	background-size: contain;
+	background-position: center 10%;
+
+	@media screen and (max-width: 991px){
+		background-attachment: initial;
+		background-size: cover;
+		background-position: center;
+	}
+}
+.header--condensed{
+	height: 25rem;
+	background-size: cover;
+	@media screen and (min-width: 1280px){
+		height: 28rem;
+	}
+	@media screen and (max-width: 767px){
+		height: 20rem;
+		background-image: none !important;
+
+		.header-scroll{
+			display: none;
+		}
+	}
+	@media screen and (max-width: 480px){
+		height: 14rem;
+	}
+}
+
+.header--thin{
+	height: 17rem;
+	background-size: cover;
+	@media screen and (min-width: 1280px){
+		height: 23rem;
+	}
+}
+
+.is-loading{
+	// nifty stuff
+}
 
 
-
-
+.header--faded{
+	position: relative;
+	&:before{
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(white, .5);
+		z-index: 1;
+	}
+	> *{
+		position: relative;
+		z-index: 2;
+	}
+}
