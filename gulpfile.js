@@ -153,11 +153,9 @@ gulp.task("webpack", function(callback) {
 	webpack(myConfig, function(err, stats) {
 		if(err) throw new gutil.PluginError("webpack", err);
 		console.log("[webpack]", stats.toString({
-            // output options
-        }));
-		// plugins.util.log("[webpack]", stats.toString({
-		//colors: true
-		// }));
+            		chunks: false,
+			colors: true
+        	}));
 		callback();
 	});
 });
