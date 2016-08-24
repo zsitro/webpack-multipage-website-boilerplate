@@ -15,8 +15,8 @@ class BackgroundAttach
 			if !url or (url is 'background')
 				url = $(@).find(' > img').first().attr 'src'
 				$(@).find('> img').first().remove()
-
-			$(@).css 'background-image', 'url('+url+')'
+			if url isnt undefined
+				$(@).css 'background-image', 'url('+url+')'
 		@
 
 	attachListener: ->
