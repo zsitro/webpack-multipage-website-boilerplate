@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-
+var connect = require('gulp-connect');
 
 
 
@@ -33,7 +33,8 @@ gulp.task('jade', function() {
 			max_preserve_newlines: 2,
 			unformatted: ['pre']
 		}))
-		.pipe(gulp.dest('./dist'));
+		.pipe(gulp.dest('./dist'))
+		.pipe(connect.reload());
 });
 
 
@@ -55,7 +56,8 @@ gulp.task('scss', function() {
 			cascade: false,
 			flexbox: true,
 		}))
-        .pipe(gulp.dest('dist/css'));
+        .pipe(gulp.dest('dist/css'))
+        .pipe(connect.reload());
 });
 
 
@@ -227,8 +229,16 @@ gulp.task('images-clean', function () {
 });
 gulp.task('images', ['images-clean', 'images-optimize']);
 
-
-
+/** ----------------------------------------------
+ * Server
+ */
+gulp.task('serve', ['watch'], function() {
+	return connect.server({
+		root: 'dist',
+		port: 8000,
+		livereload: true
+	});
+});
 
 /** ----------------------------------------------
  * Watch
