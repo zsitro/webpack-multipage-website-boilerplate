@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var connect = require('gulp-connect');
 
 
-
 /** ----------------------------------------------
  * Jade
  */
@@ -38,29 +37,23 @@ gulp.task('jade', function() {
 });
 
 
-
-
 /** ----------------------------------------------
  * Scss
  */
-var sass = require('gulp-ruby-sass');
+var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('scss', function() {
-    return sass('src/scss/main.scss', { sourcemap: false })
-		.on('error', function (err) {
-			console.error('Error', err.message);
-		})
-        .pipe(autoprefixer({
-			browsers: ['last 2 versions', 'last 3 iOS versions'],
-			cascade: false,
-			flexbox: true,
-		}))
-        .pipe(gulp.dest('dist/css'))
-        .pipe(connect.reload());
+	return gulp.src('./src/scss/main.scss')
+	.pipe(sass({ sourcemap: false }).on('error', sass.logError))
+	.pipe(autoprefixer({
+		browsers: ['last 2 versions', 'last 3 iOS versions'],
+		cascade: false,
+		flexbox: true,
+	}))
+	.pipe(gulp.dest('./dist/css'))
+	.pipe(connect.reload());
 });
-
-
 
 
 /** ----------------------------------------------
@@ -130,8 +123,6 @@ gulp.task("vendor", function(callback) {
 });
 
 
-
-
 /** ----------------------------------------------
  * Application Scripts
  */
@@ -163,26 +154,6 @@ gulp.task("webpack", function(callback) {
 });
 
 
-
-
-/** ----------------------------------------------
- * Serve and Livereload
- */
-// var webserver = require('gulp-webserver');
-
-gulp.task('webserver', function() {
-// 	gulp.src('./dist')
-// 	.pipe(webserver({
-// 		livereload: true,
-// 		directoryListing: true,
-// 		open: false,
-// 		port: 8001
-// 	}));
-});
-
-
-
-
 /** ----------------------------------------------
  * SVG SPRITE
  */
@@ -202,8 +173,6 @@ gulp.task('svg', function () {
         .pipe(svgstore())
         .pipe(gulp.dest('./dist/svg'));
 });
-
-
 
 
 /** ----------------------------------------------
@@ -229,6 +198,7 @@ gulp.task('images-clean', function () {
 });
 gulp.task('images', ['images-clean', 'images-optimize']);
 
+
 /** ----------------------------------------------
  * Server
  */
@@ -240,6 +210,7 @@ gulp.task('serve', ['watch'], function() {
 	});
 });
 
+
 /** ----------------------------------------------
  * Watch
  */
@@ -249,6 +220,7 @@ gulp.task('watch', function() {
     gulp.watch('src/scss/**/*.scss', ['scss']);
     gulp.watch('src/images/**/*.*', ['images']);
 });
+
 
 gulp.task('default', ['jade', 'scss', 'webpack', 'watch', 'webserver']);
 // gulp.task('init', ['static', 'default']);
