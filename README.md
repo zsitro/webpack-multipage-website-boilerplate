@@ -42,7 +42,8 @@ ubilabs-geocomplete // For simple geocomplete applications
 raty // stars rating
 jquery.populate // Refill forms from uri/json
 angular-touch
-jcrop // Picture cropper - see on Findafitness
+jcrop // Picture cropper - 
+bigtext // Span fontsize to match available width
 ```
 
 ## TODOs
