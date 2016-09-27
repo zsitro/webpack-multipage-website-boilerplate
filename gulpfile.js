@@ -82,8 +82,7 @@ gulp.task("vendor", function(callback) {
 		// './bower_components/jquery-throttle-debounce/jquery.ba-throttle-debounce.min.js',
 		// './bower_components/raty/lib/jquery.raty.js',
 		// './bower_components/vide/dist/jquery.vide.min.js',
-		// './src/coffee/vendor/modernizr.custom.js', // prior to codrops-menu.js
-		// './src/coffee/vendor/codrops-menu.js',
+		'./bower_components/bigtext/dist/bigtext.js',
 
 		// Angular
 		// './bower_components/angular/angular.js',
