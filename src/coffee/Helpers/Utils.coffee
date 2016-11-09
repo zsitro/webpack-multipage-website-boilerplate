@@ -6,9 +6,16 @@ class Utils
 			return instance
 		else
 			instance = this
-
 	isPage: ->
-		$('body').hasClass 'l-'+arguments[0]
+		result = false
+		if arguments[0].indexOf('|') isnt -1
+			pages = arguments[0].split('|')
+			$.each pages, ->
+				if $('body').hasClass 'l-'+@
+					result = true
+		else
+			result = $('body').hasClass 'l-'+arguments[0]
+		result
 	attachTo: ->
 		arguments[0].utils = @
 	scrollTo: ->
